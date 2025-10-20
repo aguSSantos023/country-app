@@ -4,5 +4,10 @@
   (valueSearch)="onSearch($event)"
 />
 
-<app-country-list-c [countries]="countries()"/>
+
+@if(isError()) {
+  <h3>{{ isError() }}</h3>
+}@else {
+  <app-country-list-c [countries]="countries()"/>
+}
 

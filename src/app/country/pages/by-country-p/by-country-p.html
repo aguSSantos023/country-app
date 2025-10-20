@@ -1,3 +1,7 @@
-<app-country-search-input-c placeholder="Buscar por capital"/>
+<app-country-search-input-c (valueSearch)="onSearch($event)"/>
 
-<app-country-list-c />
+@if(isError()) {
+  <h3>{{ isError() }}</h3>
+}@else {
+  <app-country-list-c [countries]="countries()"/>
+}
