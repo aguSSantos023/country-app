@@ -3,13 +3,11 @@ import { CountrySearchInputC } from "../../components/country-search-input-c/cou
 import { CountryListC } from "../../components/country-list-c/country-list-c";
 
 @Component({
-  selector: 'app-by-capital-p',
+  selector: 'app-by-country-p',
   imports: [CountrySearchInputC, CountryListC],
-  templateUrl: './by-capital-p.html',
-  styleUrl: './by-capital-p.css'
+  templateUrl: './by-country-p.html',
+  styleUrl: './by-country-p.css'
 })
-export class ByCapitalP {
-
-
+export class ByCountryP {
 
 }
