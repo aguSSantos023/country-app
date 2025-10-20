@@ -1,6 +1,8 @@
 
-<app-country-search-input-c placeholder="Buscar por capital de mi país"/>
+<app-country-search-input-c
+  placeholder="Buscar por capital de mi país"
+  (valueSearch)="onSearch($event)"
+/>
 
-
-<app-country-list-c />
+<app-country-list-c [countries]="countries()"/>
 

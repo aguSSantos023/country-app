@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CountrySearchInputC } from "../../components/country-search-input-c/country-search-input-c";
 import { CountryListC } from "../../components/country-list-c/country-list-c";
+import { CountryS } from '../../services/country-s';
+import { CountryMapper } from '../../mappers/country-mapper';
+import { Country } from '../../interfaces/country-i';
 
 @Component({
   selector: 'app-by-capital-p',
@@ -10,6 +13,27 @@ import { CountryListC } from "../../components/country-list-c/country-list-c";
 })
 export class ByCapitalP {
 
+  countryService = inject(CountryS)
 
+  isLoading = signal<boolean>(false)
+  isError = signal<string | null>(null)
+  countries = signal<Country[]>([])
+
+
+  onSearch(query: string){
+
+    if( this.isLoading() ) return
+
+    this.isLoading.set(true)
+
+    this.countryService.searchByCapital(query).subscribe(countries  => {
+
+      this.isLoading.set(false);
+
+
+      this.countries.set(countries)
+    })
+
+  }
 
 }
