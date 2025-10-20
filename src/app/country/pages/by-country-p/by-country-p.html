@@ -3,5 +3,13 @@
 @if(isError()) {
   <h3>{{ isError() }}</h3>
 }@else {
-  <app-country-list-c [countries]="countries()"/>
+  <app-country-list-c
+    [countries]="countries()"
+    [errorMessage]="isError()"
+    [isEmpty]="countries().length < 0"
+    [isLoading]="isLoading()"
+  />
 }
+
+
+

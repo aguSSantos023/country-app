@@ -2,7 +2,6 @@ import { Component, inject, signal } from '@angular/core';
 import { CountrySearchInputC } from "../../components/country-search-input-c/country-search-input-c";
 import { CountryListC } from "../../components/country-list-c/country-list-c";
 import { CountryS } from '../../services/country-s';
-import { CountryMapper } from '../../mappers/country-mapper';
 import { Country } from '../../interfaces/country-i';
 
 @Component({

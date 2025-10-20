@@ -1,1 +1,9 @@
-<p>country-p works!</p>
+
+
+@if(isError()){
+  <app-not-found-c />
+}@else {
+
+  <app-country-information-c [country]="country()!"/>
+}
+

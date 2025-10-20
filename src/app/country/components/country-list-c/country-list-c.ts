@@ -11,5 +11,11 @@ import { RouterLink } from "@angular/router";
 })
 export class CountryListC {
 
-  countries = input<Country[]>([])
+  countries = input<Country[]>()
+
+  errorMessage = input<string | null>()
+  isLoading = input<boolean>()
+  isEmpty = input<boolean>()
+
+
 }

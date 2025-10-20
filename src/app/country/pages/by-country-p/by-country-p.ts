@@ -12,7 +12,7 @@ import { Country } from '../../interfaces/country-i';
 })
 export class ByCountryP {
 
-   countryService = inject(CountryS)
+  countryService = inject(CountryS)
 
   isLoading = signal<boolean>(false)
   isError = signal<string | null>(null)
@@ -24,6 +24,7 @@ export class ByCountryP {
     if( this.isLoading() ) return
 
     this.isLoading.set(true)
+    this.isError.set(null)
 
     this.countryService.searchByCountry(query)
     .subscribe({
